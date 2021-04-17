@@ -1,0 +1,134 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<div class="jumbotron">
+    <h1>Django</h1>
+    <p class="lead">Django - бесплатный фреймворк для создания качественных Веб-сайтов и Веб-приложений, используя HTML, CSS and JavaScript.</p>
+    <p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Подробнее &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Начало работы</h2>
+        <p>
+            Django дает вам мощный, основанный на шаблонах способ создания динамических веб-сайтов, которые
+             обеспечивает четкое разделение проблем и дает вам полный контроль над разметкой
+             для приятной и быстрой разработки.
+        </p>
+        <p><a class="btn btn-default" href="https://djangobook.com/django-tutorials/">Подробнее &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Получить больше библиотек</h2>
+        <p>Индекс пакетов Python - это хранилище программного обеспечения для языка программирования Python.</p>
+        <p><a class="btn btn-default" href="https://pypi.org/">Подробнее &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Microsoft Azure</h2>
+        <p>Вы можете легко опубликовать в Microsoft Azure с помощью Visual Studio. Узнайте, как вы можете разместить свое приложение, используя бесплатную пробную версию сегодня.</p>
+        <p><a class="btn btn-default" href="http://azure.microsoft.com">Подробнее &raquo;</a></p>
+    </div>
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+    <ol class="carousel-indicators">
+
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+
+            <img src="{% static 'app/content/youtube.png'%} " alt="Первый слайд" class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+                    YouTube
+
+                    <a class="btn btn-default" href="https://youtube.com/">
+
+                        Перейти
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="item">
+
+            <img src="{% static 'app/content/python.png'%}" alt="Второй слайд"  class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+                    Python
+
+                    <a class="btn btn-default" href="https:www.python.org/">
+
+                        Перейти
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="item">
+
+            <img src=" {% static 'app/content/html.png'%} " alt="Третий слайд"  class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p color="black">
+
+                    Справочник по HTML
+
+                    <a class="btn btn-default" href="http://htmlbook.ru/">
+
+                        Перейти
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+        <span class="sr-only">Назад</span>
+
+    </a>
+
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
+        <span class="sr-only">Далее</span>
+
+    </a>
+
+</div>
+{% endblock %}

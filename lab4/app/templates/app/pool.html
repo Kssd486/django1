@@ -1,0 +1,86 @@
+{% extends "app/layout.html" %}
+{% block content %}
+<h2>{{ title }}</h2><br />
+{% if form != None %}
+ <h3>Пожалуйста оставьте отзыв о работе сайта</h3><br />
+ <div>
+  <form method="post">
+  {% csrf_token %}
+  <label for="{{ form.userName.id_for_label }}">{{ form.userName.label }}:</label>
+  {{ form.userName }}<br><br>
+  <label for="{{ form.userMail.id_for_label }}">{{ form.userMail.label }}:</label>
+  {{ form.userMail }}<br><br>
+  <label for="{{ form.age.id_for_label }}">{{ form.age.label }}:</label>
+  {{ form.age }}<br>
+  <label for="{{ form.what_like.id_for_label }}">{{ form.what_like.label }}:</label><br>
+  {{ form.what_like }}<br><br>
+  <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }}:</label>
+  {{ form.notice }}<br><br>
+  <label for="{{ form.MoreInf.id_for_label }}">{{ form.MoreInf.label }}:</label><br>
+  {{ form.MoreInf }}<br><br>
+  <input type="submit" value="Отправить" id = "btn">
+  </form>
+ </div>
+{% else %}
+ <h3>Спасибо за отзыв!</h3>
+ <p>Вы ответили:</p>
+ <ul>
+     <li><span>Имя: </span>{{ data.userName }}</li>
+     <li><span>Почта: </span>{{ data.userMail }}</li>
+     <li><span>Есть ли вам 18 лет?: </span>{{ data.age }}</li>
+     <li><span>Что вам понравилось в работе сайта?: </span>{{ data.what_like }}</li>
+     <li><span>Хотите ли вы получать рассылку на почту?: </span>{{ data.notice }}</li>
+     <li><span>Что именно вам понравилось?: </span>{{ data.MoreInf }}</li>
+ </ul>
+{% endif %}
+<script>
+    function Namefocus()
+    {
+    $('#id_userName').css('background-color', 'PaleGreen');
+    $('#id_userName').css('color', 'Navy');
+    }
+    function Nameblur()
+    {
+    $('#id_userName').css('background-color', 'transparent');
+    $('#id_userName').css('color', 'Black');
+    }
+    function Emailfocus()
+    {
+    $('#id_userMail').css('background-color', 'PaleGreen');
+    $('#id_userMail').css('color', 'Navy');
+    }
+    function Emailblur()
+    {
+    $('#id_userMail').css('background-color', 'transparent');
+    $('#id_userMail').css('color', 'Black');
+    }
+    function Inffocus()
+    {
+    $('#id_MoreInf').css('background-color', 'PaleGreen');
+    $('#id_MoreInf').css('color', 'Navy');
+    }
+    function Infblur()
+    {
+    $('#id_MoreInf').css('background-color', 'transparent');
+    $('#id_MoreInf').css('color', 'Black');
+    }
+    function Buttonmouseover()
+    {
+    $('#btn').css('background-color', 'Green');
+    $('#btn').css('color', 'White');
+    }
+    function Buttonmouseout()
+    {
+    $('#btn').css('background-color', 'transparent');
+    $('#btn').css('color', 'Black');
+    }
+    $('#id_userName').focus(Namefocus);
+    $('#id_userName').blur(Nameblur);
+    $('#id_userMail').focus(Emailfocus);
+    $('#id_userMail').blur(Emailblur);
+    $('#id_MoreInf').focus(Inffocus);
+    $('#id_MoreInf').blur(Infblur);
+    $('#btn').mouseover(Buttonmouseover);
+    $('#btn').mouseout(Buttonmouseout);
+</script>
+{% endblock %}

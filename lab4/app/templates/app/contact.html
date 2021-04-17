@@ -1,0 +1,29 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+
+
+<address>
+    Ул. 30 Лет Победы<br />
+    Сургут, 628406<br />
+    <abbr title="Phone">T:</abbr>
+    89292440994
+</address>
+
+<address>
+    <strong>Техническая поддержка:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>По вопросам рекламы:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+<form method="post">
+
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    
+    <input type="submit" value="Отправить">
+    
+    </form>
+{% endblock %}

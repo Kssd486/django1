@@ -1,0 +1,17 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<h2>{{ title }}</h2>
+
+<table width = "100%" cellpadding = "65%">
+    <tr>
+        <td width="25%" align="center"><a href ="https://google.com/" target="_blank"> <img src="{% static 'app/content/google.png' %}" alt="Google"/></a></td>
+        <td width="25%" align="center"><a href ="http://htmlbook.ru/" target="_blank"> <img src="{% static 'app/content/html.png' %}" alt="Html"/></a></td>
+        <td width="25%" align="center"><a href ="https://youtube.com/" target="_blank"> <img src="{% static 'app/content/youtube.png' %}" alt="YouTube"/></a></td>
+        <td width="25%" align="center"><a href ="https://www.python.org/" target="_blank"> <img src="{% static 'app/content/python.png' %}" alt="Python"/></a></td>
+    </tr>
+</table>
+
+
+{% endblock %}
